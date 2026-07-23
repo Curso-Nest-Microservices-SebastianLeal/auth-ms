@@ -1,20 +1,18 @@
 steps:
-- name: "gcr.io/cloud-builders/docker"
-args:
-[
-"build",
-"-t",
-"us-east1-docker.pkg.dev/nestms-431219/image-microservices/auth-ms",
-"-f",
-"auth-ms/dockerfile.prod",  # Cambiado a la ruta correcta del Dockerfile
-"--platform=linux/amd64",   # Especificar la arquitectura de la imagen
-"auth-ms",                  # El contexto de construcción debe ser el directorio del microservicio
-]
-- name: "gcr.io/cloud-builders/docker"
-args:
-[
-"push",
-"us-east1-docker.pkg.dev/nestms-431219/image-microservices/auth-ms",
-]
-options:
-logging: CLOUD_LOGGING_ONLY
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "northamerica-northeast1-docker.pkg.dev/tienda-microservices/image-registry/auth-ms",
+        "-f",
+        "dockerfile.prod",
+        "--platform=linux/amd64",
+        ".",
+      ]
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "push",
+        "northamerica-northeast1-docker.pkg.dev/tienda-microservices/image-registry/auth-ms",
+      ]
