@@ -4,7 +4,7 @@ steps:
       [
         "build",
         "-t",
-        "northamerica-northeast1-docker.pkg.dev/tienda-microservices/image-registry/auth-ms",
+        "southamerica-west1-docker.pkg.dev/tienda-microservices/image-registry/auth-ms",
         "-f",
         "dockerfile.prod",
         "--platform=linux/amd64",
@@ -14,7 +14,7 @@ steps:
     args:
       [
         "push",
-        "northamerica-northeast1-docker.pkg.dev/tienda-microservices/image-registry/auth-ms",
+        "southamerica-west1-docker.pkg.dev/tienda-microservices/image-registry/auth-ms",
       ]
 options:
   logging: CLOUD_LOGGING_ONLY
